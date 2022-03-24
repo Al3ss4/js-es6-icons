@@ -158,3 +158,28 @@ function printIcons(array){
 
 
 
+/*Milestone 3
+Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user).*/
+
+
+
+const filter = ['animal' , 'vegetable', 'user'];
+const select = document.querySelector('.filter select');
+
+
+createSelect(filter);
+// Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+
+
+
+
+//costruiamo una funzione che andrà ad inzerire delle "option" nel nostro select
+function selectOption(element){
+let content = '<option value="all">All</option>';
+	element.forEach((category)=>{
+		content+=`
+		<option value="${category}">${category}</option>
+		`
+	})
+	select.innerHTML = content;
+}
