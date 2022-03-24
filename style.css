@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+h1
+{
+    color: rgb(98, 195, 229);
+    
+}
+
+.header-top
+{
+    height: 70px;
+
+}
+
+
+
+.header-bottom
+{
+    background-color: rgb(41, 177, 221);
+    height: 70px;
+}
+
+.header-bottom span
+{
+    font-size: 18px;
+}
+
+.icone
+{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.title
+{
+    font-size: 16px;
+}

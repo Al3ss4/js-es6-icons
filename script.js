@@ -144,16 +144,18 @@ function printIcons(array){
 	Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.*/
         const grid = 
         `
-        
-            <i class="${family} ${prefix}${name}" style="color:${color}"><i>
+			
+            <i class="${family} ${prefix}${name} icone" style="color:${color}"><i>
             <p>${name.toUpperCase()}</p>
         
         `;
-        
+
         allIcons += grid;
+		
     });
 
 	iconGrid.innerHTML = allIcons;
+	
 }
 
 
@@ -171,7 +173,17 @@ createOption(filter);
 // Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
 
+//usiamo la funzione per andare a modificare il nostro select
+select.addEventListener('change', (event) =>{
 
+
+	const selectedCategory = event.target.value;
+	if(selectedCategory === 'all'){
+		printIcons(arrayIcons);
+	}else{
+		printIcons(arrayIcons.filter((item)=> item.type === selectedCategory));
+	}
+});
 //costruiamo una funzione che andrà ad inzerire delle "option" nel nostro select
 function createOption(element){
 let content = '<option value="all">All</option>';
