@@ -167,14 +167,13 @@ const filter = ['animal' , 'vegetable', 'user'];
 const select = document.querySelector('.filter select');
 
 
-createSelect(filter);
+createOption(filter);
 // Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
 
 
-
 //costruiamo una funzione che andrà ad inzerire delle "option" nel nostro select
-function selectOption(element){
+function createOption(element){
 let content = '<option value="all">All</option>';
 	element.forEach((category)=>{
 		content+=`
