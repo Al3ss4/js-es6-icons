@@ -1,4 +1,4 @@
-console.log('js ok!');
+console.log('JS OK!');
 
 
 
@@ -122,4 +122,37 @@ const arrayIcons = [
 		color: 'blue'
 	}
 ];
+
+
+//creiamo una costante per richiamare il nostro conttainer presente nel main
+const iconGrid = document.getElementById('icone');
+
+
+
+function printIcons(array){
+
+
+   	iconGrid.innerHTML ="";
+
+	   //con la function forEach vado a ciclare tutto il mio array
+    array.forEach((element) => {
+        
+	//destrutturizzo in modo da poter utilizzare family prefix e name senza element.
+        const {color, name, prefix, family} = element;
+    
+    /*Milestone 2
+	Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.*/
+        const elementHTML = 
+        `
+        <div class="col-2 icone text-center " >
+            <i class="${family} ${prefix}${name}" style="color:${color}"><i>
+            <div class="title">${name.toUpperCase()}</div>
+        </div>
+        `;
+        
+        iconGrid.innerHTML += elementHTML;
+    });
+}
+
+
 
