@@ -127,12 +127,12 @@ const arrayIcons = [
 //creiamo una costante per richiamare il nostro conttainer presente nel main
 const iconGrid = document.getElementById('icone');
 
-
+printIcons(arrayIcons);
 
 function printIcons(array){
 
 
-   	iconGrid.innerHTML ="";
+   	let allIcons ="";
 
 	   //con la function forEach vado a ciclare tutto il mio array
     array.forEach((element) => {
@@ -142,16 +142,18 @@ function printIcons(array){
     
     /*Milestone 2
 	Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.*/
-        const elementHTML = 
+        const grid = 
         `
-        <div class="col-2 icone text-center " >
+        
             <i class="${family} ${prefix}${name}" style="color:${color}"><i>
-            <div class="title">${name.toUpperCase()}</div>
-        </div>
+            <p>${name.toUpperCase()}</p>
+        
         `;
         
-        iconGrid.innerHTML += elementHTML;
+        allIcons += grid;
     });
+
+	iconGrid.innerHTML = allIcons;
 }
 
 
